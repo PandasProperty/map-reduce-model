@@ -1,0 +1,10 @@
+Nenu Anda Roxana
+334CA
+
+Am inceput in clasa temaAPD in main sa citesc fisierele si sa organizez thread pool-urile. Astfel am creat un thread pool de dimensiune nrThreads, in care imparteam fisierele, un thread  ProcSimilar, primind numele unui fisier, startRead si dimensiunea, incrementam startRead cu dimensiunea si repetam aceasta pana cand startRead depasea lungimea fisierului curent, si atunci treceam la fisierul urmator pana cand terminam fisierele date. 
+
+Un ProcSimilar se ocupa de bucata lui din fisier actualizand un HashTable static si sincronizat MapFile de tip {nume_fisier : { cuvant:numar_aparitii }} care la sfarsit va contine pentru fiecare fisier toate cuvintele cu numarul lor de aparitii, in acelasi timp am numarat si toate cuvintele dintr-un fisier intr-un HashTable static si sincronizat nr_cuvinte de tip {nume_fisier:numar_cuvinte}.
+
+Dupa ce acest threadpool cu thread-uri de tip ProcSimilar se termina (executor1.isTerminated()), calculam similaritatile intre documentul de verificat si restul documentelor, creand un threadpool cu thread-uri de tip calculateSim care calcula similaritatea dupa rezultatele obtinute anterior si dupa formula. Cand si acest threadpool isi inceta activitatea stiam ca am terminat de calculat similaritatile si le-am afisat in fisierul de iesire.
+
+Feedback: Personal, cred ca tema a fost un bun exercitiu pentru lucrul cu thread-uri in java, deoarece am dobondit multe cunostinte noi privind Threadpool si functiile aplicate lor.  
